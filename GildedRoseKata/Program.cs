@@ -20,7 +20,7 @@ public class Program
             new BackstagePassesProduct(10, 49),
             new BackstagePassesProduct(5, 49),
             // this conjured item does not work properly yet
-            new Product("Conjured Mana Cake", 3, 6)
+            new ConjuredProduct(3, 6)
         };
 
         var app = new GildedRose(products);
