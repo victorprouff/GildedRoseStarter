@@ -13,15 +13,15 @@ public class GildedRoseUpdateQualityTests
     public void DoesNothingGivenSulfuras()
     {
         int initialQuality = 80;
-        var items = new List<Item>
+        var products = new List<Product>
         {
-            new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = initialQuality },
+            new SulfurasProduct() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = initialQuality },
         };
-        var gildedRose = new GildedRose(items);
+        var gildedRose = new GildedRose(products);
 
         gildedRose.UpdateQuality();
 
-        var firstItem = items.First();
+        var firstItem = products.First();
 
         // Use your preferred assertion library (already included - pick one delete others)
         // xunit default
