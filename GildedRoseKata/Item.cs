@@ -32,11 +32,6 @@ public class AgedBrieProduct : Product
             Quality = Quality + 1;
         }
     }
-
-    public override void RemoveOneToSellIn()
-    {
-        SellIn = SellIn - 1;
-    }
 }
 
 public class BackstagePassesProduct : Product
@@ -63,11 +58,6 @@ public class BackstagePassesProduct : Product
                 }
             }
         }
-    }
-
-    public override void RemoveOneToSellIn()
-    {
-        SellIn = SellIn - 1;
     }
 }
 
