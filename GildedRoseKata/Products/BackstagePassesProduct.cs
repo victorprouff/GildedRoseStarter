@@ -8,12 +8,9 @@ public class BackstagePassesProduct : Product
 
         Quality++;
 
-        if (SellIn < 11)
+        if (SellIn < 11 && Quality < 50)
         {
-            if (Quality < 50)
-            {
-                Quality++;
-            }
+            Quality++;
         }
 
         if (SellIn < 6)
