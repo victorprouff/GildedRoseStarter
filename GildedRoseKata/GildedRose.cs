@@ -30,13 +30,7 @@ public class GildedRose
                 }
                 else
                 {
-                    if (Products[i].Quality > 0)
-                    {
-                        if (Products[i] is not SulfurasProduct)
-                        {
-                            Products[i].Quality = Products[i].Quality - 1;
-                        }
-                    }
+                    Products[i].UpdateQualityWhenSellInLessThan0();
                 }
             }
         }

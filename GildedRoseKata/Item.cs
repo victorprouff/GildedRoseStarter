@@ -24,7 +24,10 @@ public class Product : Item
 
     public virtual void UpdateQualityWhenSellInLessThan0()
     {
-
+        if (Quality > 0)
+        {
+            Quality = Quality - 1;
+        }
     }
 }
 
@@ -86,6 +89,10 @@ public class SulfurasProduct : Product
     }
 
     public override void RemoveOneToSellIn()
+    {
+    }
+
+    public override void UpdateQualityWhenSellInLessThan0()
     {
     }
 }
