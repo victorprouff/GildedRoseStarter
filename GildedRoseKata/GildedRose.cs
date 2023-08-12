@@ -17,9 +17,10 @@ public class GildedRose
         {
             if (Items[i] is AgedBrieProduct)
             {
-                ((AgedBrieProduct)Items[i]).UpdateQuality();
+                var agedBrieProduct = ((AgedBrieProduct)Items[i]);
 
-                RemoveOneToSellIn(Items[i]);
+                agedBrieProduct.UpdateQuality();
+                agedBrieProduct.RemoveOneToSellIn();
             }
             else if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
             {

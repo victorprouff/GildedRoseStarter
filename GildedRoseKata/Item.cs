@@ -10,6 +10,8 @@ public class Item
 public abstract partial class Product : Item
 {
     public abstract void UpdateQuality();
+
+    public abstract void RemoveOneToSellIn();
 }
 public class AgedBrieProduct : Product
 {
@@ -19,5 +21,10 @@ public class AgedBrieProduct : Product
         {
             Quality = Quality + 1;
         }
+    }
+
+    public override void RemoveOneToSellIn()
+    {
+        SellIn = SellIn - 1;
     }
 }
