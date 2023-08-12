@@ -12,7 +12,7 @@ public class Program
 
         IList<Product> products = new List<Product>{
             new Product {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
-            new AgedBrieProduct {Name = "Aged Brie", SellIn = 2, Quality = 0},
+            new AgedBrieProduct(2),
             new Product {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7},
             new SulfurasProduct() {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
             new SulfurasProduct {Name = "Sulfuras, Hand of Ragnaros", SellIn = -1, Quality = 80},
