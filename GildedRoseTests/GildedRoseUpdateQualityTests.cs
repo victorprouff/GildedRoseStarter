@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using GildedRoseKata.Products;
 using Shouldly;
 
 namespace GildedRoseKata;

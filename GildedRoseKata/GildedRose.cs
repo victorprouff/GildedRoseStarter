@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using GildedRoseKata.Products;
 
 namespace GildedRoseKata;
 
