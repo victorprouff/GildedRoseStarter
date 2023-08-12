@@ -38,4 +38,6 @@ public class Product : Item
             Quality--;
         }
     }
+
+    public override string ToString() => $"{Name}, {SellIn}, {Quality}";
 }

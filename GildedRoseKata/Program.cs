@@ -25,14 +25,13 @@ public class Program
 
         var app = new GildedRose(products);
 
-
         for (var i = 0; i < 31; i++)
         {
             Console.WriteLine("-------- day " + i + " --------");
             Console.WriteLine("name, sellIn, quality");
             for (var j = 0; j < products.Count; j++)
             {
-                System.Console.WriteLine(products[j].Name + ", " + products[j].SellIn + ", " + products[j].Quality);
+                System.Console.WriteLine(products[j].ToString());
             }
             Console.WriteLine("");
             app.UpdateQuality();
