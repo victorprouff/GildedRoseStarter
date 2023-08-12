@@ -20,18 +20,7 @@ public class GildedRose
 
             if (Products[i].SellIn < 0)
             {
-                if (Products[i] is AgedBrieProduct)
-                {
-                    Products[i].UpdateQualityWhenSellInLessThan0();
-                }
-                else if (Products[i] is BackstagePassesProduct)
-                {
-                    Products[i].UpdateQualityWhenSellInLessThan0();
-                }
-                else
-                {
-                    Products[i].UpdateQualityWhenSellInLessThan0();
-                }
+                Products[i].UpdateQualityWhenSellInLessThan0();
             }
         }
     }
