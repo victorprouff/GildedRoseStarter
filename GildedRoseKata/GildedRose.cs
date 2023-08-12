@@ -20,14 +20,11 @@ public class GildedRose
 
             if (Products[i].SellIn < 0)
             {
-                if (Products[i].Name == "Aged Brie")
+                if (Products[i] is AgedBrieProduct)
                 {
-                    if (Products[i].Quality < 50)
-                    {
-                        Products[i].Quality = Products[i].Quality + 1;
-                    }
+                    UpdateQualityWhenSellInLessThan0(Products[i]);
                 }
-                else if (Products[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+                else if (Products[i] is BackstagePassesProduct)
                 {
                     Products[i].Quality = 0;
                 }
@@ -35,13 +32,21 @@ public class GildedRose
                 {
                     if (Products[i].Quality > 0)
                     {
-                        if (Products[i].Name != "Sulfuras, Hand of Ragnaros")
+                        if (Products[i] is not SulfurasProduct)
                         {
                             Products[i].Quality = Products[i].Quality - 1;
                         }
                     }
                 }
             }
+        }
+    }
+
+    private void UpdateQualityWhenSellInLessThan0(Product product)
+    {
+        if (product.Quality < 50)
+        {
+            product.Quality = product.Quality + 1;
         }
     }
 }
