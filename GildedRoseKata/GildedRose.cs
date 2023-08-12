@@ -25,6 +25,7 @@ public class GildedRose
             else if (Items[i] is BackstagePassesProduct)
             {
                 var backstagePassesProduct = ((BackstagePassesProduct)Items[i]);
+
                 backstagePassesProduct.UpdateQuality();
                 backstagePassesProduct.RemoveOneToSellIn();
             }

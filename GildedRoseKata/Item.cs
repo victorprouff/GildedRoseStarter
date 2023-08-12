@@ -7,11 +7,20 @@ public class Item
     public int Quality { get; set; }
 }
 
-public abstract partial class Product : Item
+public abstract class Product : Item
 {
-    public abstract void UpdateQuality();
+    public virtual void UpdateQuality()
+    {
+        if (Quality > 0)
+        {
+            Quality = Quality - 1;
+        }
+    }
 
-    public abstract void RemoveOneToSellIn();
+    public virtual void RemoveOneToSellIn()
+    {
+        SellIn = SellIn - 1;
+    }
 }
 
 public class AgedBrieProduct : Product
