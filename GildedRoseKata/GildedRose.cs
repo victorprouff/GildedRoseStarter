@@ -32,21 +32,7 @@ public class GildedRose
 
                     if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
                     {
-                        if (Items[i].SellIn < 11)
-                        {
-                            if (Items[i].Quality < 50)
-                            {
-                                Items[i].Quality = Items[i].Quality + 1;
-                            }
-                        }
-
-                        if (Items[i].SellIn < 6)
-                        {
-                            if (Items[i].Quality < 50)
-                            {
-                                Items[i].Quality = Items[i].Quality + 1;
-                            }
-                        }
+                        CalculateBackstagePasses(Items[i]);
                     }
                 }
             }
@@ -82,6 +68,25 @@ public class GildedRose
                         Items[i].Quality = Items[i].Quality + 1;
                     }
                 }
+            }
+        }
+    }
+
+    private void CalculateBackstagePasses(Item item)
+    {
+        if (item.SellIn < 11)
+        {
+            if (item.Quality < 50)
+            {
+                item.Quality = item.Quality + 1;
+            }
+        }
+
+        if (item.SellIn < 6)
+        {
+            if (item.Quality < 50)
+            {
+                item.Quality = item.Quality + 1;
             }
         }
     }
