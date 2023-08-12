@@ -29,11 +29,5 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="CharacterizationTest.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>CharacterizationTest.cs</DependentUpon>
-    </None>
-  </ItemGroup>
 
 </Project>
