@@ -10,6 +10,7 @@ public class AgedBrieProductShould
     [InlineData(3, 3)]
     [InlineData(4, 5)]
     [InlineData(5, 7)]
+    [InlineData(30, 50)]
     public void QualityDeclines(int numberOfTurns, int expectedQuality)
     {
         var product = new AgedBrieProduct(3);
