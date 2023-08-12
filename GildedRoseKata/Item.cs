@@ -21,11 +21,24 @@ public class Product : Item
     {
         SellIn = SellIn - 1;
     }
+
+    public virtual void UpdateQualityWhenSellInLessThan0()
+    {
+
+    }
 }
 
 public class AgedBrieProduct : Product
 {
     public override void UpdateQuality()
+    {
+        if (Quality < 50)
+        {
+            Quality = Quality + 1;
+        }
+    }
+
+    public override void UpdateQualityWhenSellInLessThan0()
     {
         if (Quality < 50)
         {

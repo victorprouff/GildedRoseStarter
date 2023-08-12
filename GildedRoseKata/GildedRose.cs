@@ -22,7 +22,7 @@ public class GildedRose
             {
                 if (Products[i] is AgedBrieProduct)
                 {
-                    UpdateQualityWhenSellInLessThan0(Products[i]);
+                    Products[i].UpdateQualityWhenSellInLessThan0();
                 }
                 else if (Products[i] is BackstagePassesProduct)
                 {
@@ -39,14 +39,6 @@ public class GildedRose
                     }
                 }
             }
-        }
-    }
-
-    private void UpdateQualityWhenSellInLessThan0(Product product)
-    {
-        if (product.Quality < 50)
-        {
-            product.Quality = product.Quality + 1;
         }
     }
 }
