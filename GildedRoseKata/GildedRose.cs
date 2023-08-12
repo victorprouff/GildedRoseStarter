@@ -5,16 +5,16 @@ namespace GildedRoseKata;
 
 public class GildedRose
 {
-    IList<Product> Products;
+    private readonly IList<Product> _products;
 
     public GildedRose(IList<Product> products)
     {
-        Products = products;
+        _products = products;
     }
 
     public void UpdateQuality()
     {
-        foreach (var product in Products)
+        foreach (var product in _products)
         {
             product.UpdateQuality();
         }
