@@ -10,12 +10,22 @@ public class ProductShould
     [InlineData(0, 5, 3)]
     [InlineData(-1, 5, 3)]
     [InlineData(-1, 0, 0)]
-    public void QualityDeclines(int sellIn, int quality, int expectedQuality)
+    public void UpdateQuality(int sellIn, int quality, int expectedQuality)
     {
         var product = new Product("", sellIn, quality);
 
         product.UpdateQuality();
 
         product.Quality.Should().Be(expectedQuality);
+    }
+
+    [Fact]
+    public void ToStringReturnLabelProduct()
+    {
+        var product = new Product("test", 5, 50);
+
+        var label = product.ToString();
+
+        label.Should().Be("test, 5, 50");
     }
 }

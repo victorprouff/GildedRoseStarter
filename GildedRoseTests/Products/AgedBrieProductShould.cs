@@ -11,7 +11,7 @@ public class AgedBrieProductShould
     [InlineData(4, 5)]
     [InlineData(5, 7)]
     [InlineData(30, 50)]
-    public void QualityDeclines(int numberOfTurns, int expectedQuality)
+    public void UpdateQuality(int numberOfTurns, int expectedQuality)
     {
         var product = new AgedBrieProduct(3);
 
@@ -21,5 +21,15 @@ public class AgedBrieProductShould
         }
 
         product.Quality.Should().Be(expectedQuality);
+    }
+
+    [Fact]
+    public void ToStringReturnLabelProduct()
+    {
+        var product = new AgedBrieProduct(5);
+
+        var label = product.ToString();
+
+        label.Should().Be("Aged Brie, 5, 0");
     }
 }
