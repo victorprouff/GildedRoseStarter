@@ -16,7 +16,7 @@ public class GildedRoseUpdateQualityTests
         int initialQuality = 80;
         var products = new List<Product>
         {
-            new SulfurasProduct() { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = initialQuality },
+            new SulfurasProduct(0),
         };
         var gildedRose = new GildedRose(products);
 

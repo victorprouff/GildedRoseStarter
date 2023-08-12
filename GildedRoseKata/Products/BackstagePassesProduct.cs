@@ -2,6 +2,11 @@ namespace GildedRoseKata.Products;
 
 public class BackstagePassesProduct : Product
 {
+    public BackstagePassesProduct(int sellIn, int quality)
+        : base("Backstage passes to a TAFKAL80ETC concert", sellIn, quality)
+    {
+    }
+
     public override void UpdateQuality()
     {
         SetQuality();

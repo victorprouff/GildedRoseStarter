@@ -3,10 +3,8 @@ namespace GildedRoseKata.Products;
 public class AgedBrieProduct : Product
 {
     public AgedBrieProduct(int sellIn)
+        : base("Aged Brie", sellIn, 0)
     {
-        Name = "Aged Brie";
-        Quality = 0;
-        SellIn = sellIn;
     }
 
     public override void UpdateQuality()

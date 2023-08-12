@@ -2,6 +2,13 @@ namespace GildedRoseKata.Products;
 
 public class Product : Item
 {
+    public Product(string name, int sellIn, int quality)
+    {
+        Name = name;
+        SellIn = sellIn;
+        Quality = quality;
+    }
+
     public virtual void UpdateQuality()
     {
         SetQuality();
