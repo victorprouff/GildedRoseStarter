@@ -72,6 +72,11 @@ public class BackstagePassesProduct : Product
             }
         }
     }
+
+    public override void UpdateQualityWhenSellInLessThan0()
+    {
+        Quality = 0;
+    }
 }
 
 public class SulfurasProduct : Product

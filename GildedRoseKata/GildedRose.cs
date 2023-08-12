@@ -26,7 +26,7 @@ public class GildedRose
                 }
                 else if (Products[i] is BackstagePassesProduct)
                 {
-                    Products[i].Quality = 0;
+                    Products[i].UpdateQualityWhenSellInLessThan0();
                 }
                 else
                 {
