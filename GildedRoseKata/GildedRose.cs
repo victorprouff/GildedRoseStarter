@@ -29,11 +29,10 @@ public class GildedRose
                 backstagePassesProduct.UpdateQuality();
                 backstagePassesProduct.RemoveOneToSellIn();
             }
-            else if (Products[i].Name != "Sulfuras, Hand of Ragnaros")
+            else if (Products[i] is not SulfurasProduct)
             {
-                UpdateQualityForNormalProducts(Products[i]);
-
-                RemoveOneToSellIn(Products[i]);
+                Products[i].UpdateQuality();
+                Products[i].RemoveOneToSellIn();
             }
 
             if (Products[i].SellIn < 0)
