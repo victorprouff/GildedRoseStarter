@@ -4,17 +4,27 @@ public class AgedBrieProduct : Product
 {
     public override void UpdateQuality()
     {
+        SetQuality();
+
+        SetSellIn();
+
+        SetQualityWhenSellInLessThan0();
+    }
+
+    private void SetQuality()
+    {
         if (Quality < 50)
         {
             Quality++;
         }
-
-        SellIn--;
-
-        UpdateQualityWhenSellInLessThan0();
     }
 
-    private void UpdateQualityWhenSellInLessThan0()
+    private void SetSellIn()
+    {
+        SellIn--;
+    }
+
+    private void SetQualityWhenSellInLessThan0()
     {
         if (SellIn < 0 && Quality < 50)
         {
