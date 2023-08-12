@@ -27,18 +27,14 @@ public class GildedRose
                 {
                     Items[i].Quality = Items[i].Quality + 1;
 
-                    CalculateBackstagePasses(Items[i]);
-
+                    CalculateQualityBySellInForBackstagePasses(Items[i]);
                 }
             }
-            else
+            else if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
             {
                 if (Items[i].Quality > 0)
                 {
-                    if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                    {
-                        Items[i].Quality = Items[i].Quality - 1;
-                    }
+                    Items[i].Quality = Items[i].Quality - 1;
                 }
             }
 
@@ -74,7 +70,7 @@ public class GildedRose
         }
     }
 
-    private void CalculateBackstagePasses(Item item)
+    private void CalculateQualityBySellInForBackstagePasses(Item item)
     {
         if (item.SellIn < 11)
         {
