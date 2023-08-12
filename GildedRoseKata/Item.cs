@@ -13,20 +13,20 @@ public class Product : Item
     {
         if (Quality > 0)
         {
-            Quality = Quality - 1;
+            Quality--;
         }
     }
 
     public virtual void RemoveOneToSellIn()
     {
-        SellIn = SellIn - 1;
+        SellIn--;
     }
 
     public virtual void UpdateQualityWhenSellInLessThan0()
     {
         if (SellIn < 0 && Quality > 0)
         {
-            Quality = Quality - 1;
+            Quality--;
         }
     }
 }
@@ -37,7 +37,7 @@ public class AgedBrieProduct : Product
     {
         if (Quality < 50)
         {
-            Quality = Quality + 1;
+            Quality++;
         }
     }
 
@@ -45,7 +45,7 @@ public class AgedBrieProduct : Product
     {
         if (SellIn < 0 && Quality < 50)
         {
-            Quality = Quality + 1;
+            Quality++;
         }
     }
 }
