@@ -6,10 +6,6 @@ public class SulfurasProduct : Product
     {
     }
 
-    public override void RemoveOneToSellIn()
-    {
-    }
-
     public override void UpdateQualityWhenSellInLessThan0()
     {
     }

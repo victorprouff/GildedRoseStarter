@@ -8,6 +8,8 @@ public class AgedBrieProduct : Product
         {
             Quality++;
         }
+
+        SellIn--;
     }
 
     public override void UpdateQualityWhenSellInLessThan0()

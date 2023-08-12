@@ -8,10 +8,7 @@ public class Product : Item
         {
             Quality--;
         }
-    }
 
-    public virtual void RemoveOneToSellIn()
-    {
         SellIn--;
     }
 

@@ -4,22 +4,28 @@ public class BackstagePassesProduct : Product
 {
     public override void UpdateQuality()
     {
-        if (Quality >= 50) return;
+        if (Quality >= 50)
+        {
+            SellIn--;
+            return;
+        }
 
         Quality++;
 
-        if (SellIn < 11 && Quality < 50)
+        if (Quality < 50)
         {
-            Quality++;
-        }
+            if (SellIn < 11)
+            {
+                Quality++;
+            }
 
-        if (SellIn < 6)
-        {
-            if (Quality < 50)
+            if (SellIn < 6)
             {
                 Quality++;
             }
         }
+
+        SellIn--;
     }
 
     public override void UpdateQualityWhenSellInLessThan0()
