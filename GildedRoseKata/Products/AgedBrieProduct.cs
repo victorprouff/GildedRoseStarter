@@ -10,9 +10,11 @@ public class AgedBrieProduct : Product
         }
 
         SellIn--;
+
+        UpdateQualityWhenSellInLessThan0();
     }
 
-    public override void UpdateQualityWhenSellInLessThan0()
+    private void UpdateQualityWhenSellInLessThan0()
     {
         if (SellIn < 0 && Quality < 50)
         {

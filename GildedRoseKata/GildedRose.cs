@@ -17,7 +17,6 @@ public class GildedRose
         foreach (var product in Products)
         {
             product.UpdateQuality();
-            product.UpdateQualityWhenSellInLessThan0();
         }
     }
 }

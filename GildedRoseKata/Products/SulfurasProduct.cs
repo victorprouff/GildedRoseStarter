@@ -5,8 +5,4 @@ public class SulfurasProduct : Product
     public override void UpdateQuality()
     {
     }
-
-    public override void UpdateQualityWhenSellInLessThan0()
-    {
-    }
 }

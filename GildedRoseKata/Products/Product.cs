@@ -10,9 +10,11 @@ public class Product : Item
         }
 
         SellIn--;
+
+        UpdateQualityWhenSellInLessThan0();
     }
 
-    public virtual void UpdateQualityWhenSellInLessThan0()
+    private void UpdateQualityWhenSellInLessThan0()
     {
         if (SellIn < 0 && Quality > 0)
         {
