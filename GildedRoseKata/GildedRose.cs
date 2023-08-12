@@ -15,9 +15,9 @@ public class GildedRose
     {
         for (var i = 0; i < Items.Count; i++)
         {
-            if (Items[i].Name == "Aged Brie")
+            if (Items[i] is AgedBrieProduct)
             {
-                UpdateQualityAgedBrie(Items[i]);
+                ((AgedBrieProduct)Items[i]).UpdateQuality();
 
                 RemoveOneToSellIn(Items[i]);
             }
@@ -95,14 +95,6 @@ public class GildedRose
                     item.Quality = item.Quality + 1;
                 }
             }
-        }
-    }
-
-    private void UpdateQualityAgedBrie(Item item)
-    {
-        if (item.Quality < 50)
-        {
-            item.Quality = item.Quality + 1;
         }
     }
 }
