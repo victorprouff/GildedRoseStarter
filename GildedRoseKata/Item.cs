@@ -7,7 +7,7 @@ public class Item
     public int Quality { get; set; }
 }
 
-public abstract class Product : Item
+public class Product : Item
 {
     public virtual void UpdateQuality()
     {
@@ -68,5 +68,16 @@ public class BackstagePassesProduct : Product
     public override void RemoveOneToSellIn()
     {
         SellIn = SellIn - 1;
+    }
+}
+
+public class SulfurasProduct : Product
+{
+    public override void UpdateQuality()
+    {
+    }
+
+    public override void RemoveOneToSellIn()
+    {
     }
 }
