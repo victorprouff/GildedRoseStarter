@@ -63,10 +63,7 @@ public class GildedRose
                 }
                 else
                 {
-                    if (Items[i].Quality < 50)
-                    {
-                        Items[i].Quality = Items[i].Quality + 1;
-                    }
+                    Add1QualityIfQualityLowerTo50(Items[i]);
                 }
             }
         }
@@ -76,18 +73,20 @@ public class GildedRose
     {
         if (item.SellIn < 11)
         {
-            if (item.Quality < 50)
-            {
-                item.Quality = item.Quality + 1;
-            }
+            Add1QualityIfQualityLowerTo50(item);
         }
 
         if (item.SellIn < 6)
         {
-            if (item.Quality < 50)
-            {
-                item.Quality = item.Quality + 1;
-            }
+            Add1QualityIfQualityLowerTo50(item);
+        }
+    }
+
+    private void Add1QualityIfQualityLowerTo50(Item item)
+    {
+        if (item.Quality < 50)
+        {
+            item.Quality = item.Quality + 1;
         }
     }
 }
