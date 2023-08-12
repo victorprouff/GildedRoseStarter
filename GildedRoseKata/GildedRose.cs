@@ -15,25 +15,8 @@ public class GildedRose
     {
         for (var i = 0; i < Products.Count; i++)
         {
-            if (Products[i] is AgedBrieProduct)
-            {
-                var agedBrieProduct = ((AgedBrieProduct)Products[i]);
-
-                agedBrieProduct.UpdateQuality();
-                agedBrieProduct.RemoveOneToSellIn();
-            }
-            else if (Products[i] is BackstagePassesProduct)
-            {
-                var backstagePassesProduct = ((BackstagePassesProduct)Products[i]);
-
-                backstagePassesProduct.UpdateQuality();
-                backstagePassesProduct.RemoveOneToSellIn();
-            }
-            else if (Products[i] is not SulfurasProduct)
-            {
-                Products[i].UpdateQuality();
-                Products[i].RemoveOneToSellIn();
-            }
+            Products[i].UpdateQuality();
+            Products[i].RemoveOneToSellIn();
 
             if (Products[i].SellIn < 0)
             {
@@ -59,19 +42,6 @@ public class GildedRose
                     }
                 }
             }
-        }
-    }
-
-    private void RemoveOneToSellIn(Item item)
-    {
-        item.SellIn = item.SellIn - 1;
-    }
-
-    private void UpdateQualityForNormalProducts(Item item)
-    {
-        if (item.Quality > 0)
-        {
-            item.Quality = item.Quality - 1;
         }
     }
 }
