@@ -29,14 +29,10 @@ public class GildedRose
             }
             else if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
             {
-                if (Items[i].Quality > 0)
-                {
-                    Items[i].Quality = Items[i].Quality - 1;
-                }
+                UpdateQualityForNormalProducts(Items[i]);
 
                 Items[i].SellIn = Items[i].SellIn - 1;
             }
-
 
             if (Items[i].SellIn < 0)
             {
@@ -62,6 +58,14 @@ public class GildedRose
                     }
                 }
             }
+        }
+    }
+
+    private void UpdateQualityForNormalProducts(Item item)
+    {
+        if (item.Quality > 0)
+        {
+            item.Quality = item.Quality - 1;
         }
     }
 
