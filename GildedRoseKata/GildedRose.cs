@@ -9,16 +9,16 @@ public class GildedRose
 
     public GildedRose(IList<Product> products)
     {
-        this.Products = products;
+        Products = products;
     }
 
     public void UpdateQuality()
     {
-        for (var i = 0; i < Products.Count; i++)
+        foreach (var product in Products)
         {
-            Products[i].UpdateQuality();
-            Products[i].RemoveOneToSellIn();
-            Products[i].UpdateQualityWhenSellInLessThan0();
+            product.UpdateQuality();
+            product.RemoveOneToSellIn();
+            product.UpdateQualityWhenSellInLessThan0();
         }
     }
 }
