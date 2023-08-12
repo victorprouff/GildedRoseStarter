@@ -22,11 +22,11 @@ public class GildedRose
                 agedBrieProduct.UpdateQuality();
                 agedBrieProduct.RemoveOneToSellIn();
             }
-            else if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+            else if (Items[i] is BackstagePassesProduct)
             {
-                UpdateQualityForBackstagePasses(Items[i]);
-
-                RemoveOneToSellIn(Items[i]);
+                var backstagePassesProduct = ((BackstagePassesProduct)Items[i]);
+                backstagePassesProduct.UpdateQuality();
+                backstagePassesProduct.RemoveOneToSellIn();
             }
             else if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
             {
@@ -72,30 +72,6 @@ public class GildedRose
         if (item.Quality > 0)
         {
             item.Quality = item.Quality - 1;
-        }
-    }
-
-    private void UpdateQualityForBackstagePasses(Item item)
-    {
-        if (item.Quality < 50)
-        {
-            item.Quality = item.Quality + 1;
-
-            if (item.SellIn < 11)
-            {
-                if (item.Quality < 50)
-                {
-                    item.Quality = item.Quality + 1;
-                }
-            }
-
-            if (item.SellIn < 6)
-            {
-                if (item.Quality < 50)
-                {
-                    item.Quality = item.Quality + 1;
-                }
-            }
         }
     }
 }
