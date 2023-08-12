@@ -24,7 +24,7 @@ public class Product : Item
 
     public virtual void UpdateQualityWhenSellInLessThan0()
     {
-        if (Quality > 0)
+        if (SellIn < 0 && Quality > 0)
         {
             Quality = Quality - 1;
         }
@@ -43,7 +43,7 @@ public class AgedBrieProduct : Product
 
     public override void UpdateQualityWhenSellInLessThan0()
     {
-        if (Quality < 50)
+        if (SellIn < 0 && Quality < 50)
         {
             Quality = Quality + 1;
         }
@@ -78,7 +78,10 @@ public class BackstagePassesProduct : Product
 
     public override void UpdateQualityWhenSellInLessThan0()
     {
-        Quality = 0;
+        if (SellIn < 0)
+        {
+            Quality = 0;
+        }
     }
 }
 

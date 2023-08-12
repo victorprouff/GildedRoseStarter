@@ -17,11 +17,7 @@ public class GildedRose
         {
             Products[i].UpdateQuality();
             Products[i].RemoveOneToSellIn();
-
-            if (Products[i].SellIn < 0)
-            {
-                Products[i].UpdateQualityWhenSellInLessThan0();
-            }
+            Products[i].UpdateQualityWhenSellInLessThan0();
         }
     }
 }
