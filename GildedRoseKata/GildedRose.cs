@@ -19,19 +19,19 @@ public class GildedRose
             {
                 UpdateQualityAgedBrie(Items[i]);
 
-                Items[i].SellIn = Items[i].SellIn - 1;
+                RemoveOneToSellIn(Items[i]);
             }
             else if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
             {
                 UpdateQualityForBackstagePasses(Items[i]);
 
-                Items[i].SellIn = Items[i].SellIn - 1;
+                RemoveOneToSellIn(Items[i]);
             }
             else if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
             {
                 UpdateQualityForNormalProducts(Items[i]);
 
-                Items[i].SellIn = Items[i].SellIn - 1;
+                RemoveOneToSellIn(Items[i]);
             }
 
             if (Items[i].SellIn < 0)
@@ -59,6 +59,11 @@ public class GildedRose
                 }
             }
         }
+    }
+
+    private void RemoveOneToSellIn(Item item)
+    {
+        item.SellIn = item.SellIn - 1;
     }
 
     private void UpdateQualityForNormalProducts(Item item)
