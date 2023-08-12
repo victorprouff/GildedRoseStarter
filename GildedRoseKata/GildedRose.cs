@@ -20,6 +20,8 @@ public class GildedRose
                 {
                     Items[i].Quality = Items[i].Quality + 1;
                 }
+
+                Items[i].SellIn = Items[i].SellIn - 1;
             }
             else if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
             {
@@ -29,6 +31,8 @@ public class GildedRose
 
                     CalculateQualityBySellInForBackstagePasses(Items[i]);
                 }
+
+                Items[i].SellIn = Items[i].SellIn - 1;
             }
             else if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
             {
@@ -36,10 +40,7 @@ public class GildedRose
                 {
                     Items[i].Quality = Items[i].Quality - 1;
                 }
-            }
 
-            if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-            {
                 Items[i].SellIn = Items[i].SellIn - 1;
             }
 
