@@ -4,37 +4,36 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace GildedRoseKata
+namespace GildedRoseKata;
+
+/// <summary>
+/// Test naming convention recommendation:
+/// https://ardalis.com/unit-test-naming-convention/
+/// </summary>
+public class GildedRose_UpdateQuality
 {
-    /// <summary>
-    /// Test naming convention recommendation:
-    /// https://ardalis.com/unit-test-naming-convention/
-    /// </summary>
-    public class GildedRose_UpdateQuality
+    [Fact]
+    public void DoesNothingGivenSulfuras()
     {
-        [Fact]
-        public void DoesNothingGivenSulfuras()
-        {
-            int initialQuality = 80;
-            var items = new List<Item> {
-                                new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = initialQuality},
+        int initialQuality = 80;
+        var items = new List<Item> {
+            new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = initialQuality},
 
-            };
-            var gildedRose = new GildedRose(items);
+        };
+        var gildedRose = new GildedRose(items);
             
-            gildedRose.UpdateQuality();
+        gildedRose.UpdateQuality();
 
-            var firstItem = items.First();
+        var firstItem = items.First();
             
-            // Use your preferred assertion library (already included - pick one delete others)
-            // xunit default
-            Assert.Equal(initialQuality, firstItem.Quality);
+        // Use your preferred assertion library (already included - pick one delete others)
+        // xunit default
+        Assert.Equal(initialQuality, firstItem.Quality);
 
-            // fluentassertions
-            firstItem.Quality.Should().Be(initialQuality);
+        // fluentassertions
+        firstItem.Quality.Should().Be(initialQuality);
 
-            // shouldly
-            firstItem.Quality.ShouldBe(initialQuality);
-        }
+        // shouldly
+        firstItem.Quality.ShouldBe(initialQuality);
     }
 }
