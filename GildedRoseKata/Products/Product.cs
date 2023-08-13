@@ -26,7 +26,7 @@ public class Product : Item
         }
     }
 
-    private void SetSellIn()
+    protected void SetSellIn()
     {
         SellIn--;
     }

@@ -35,11 +35,6 @@ public class BackstagePassesProduct : Product
         }
     }
 
-    private void SetSellIn()
-    {
-        SellIn--;
-    }
-
     private void SetQualityWhenSellInLessThan0()
     {
         if (SellIn < 0)

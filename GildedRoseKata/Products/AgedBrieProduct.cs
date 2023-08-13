@@ -24,11 +24,6 @@ public class AgedBrieProduct : Product
         }
     }
 
-    private void SetSellIn()
-    {
-        SellIn--;
-    }
-
     private void SetQualityWhenSellInLessThan0()
     {
         if (SellIn < 0 && Quality < 50)
