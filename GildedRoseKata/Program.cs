@@ -18,12 +18,19 @@ public class Program
         {
             Console.WriteLine("-------- day " + i + " --------");
             Console.WriteLine("name, sellIn, quality");
-            for (var j = 0; j < products.Count; j++)
-            {
-                System.Console.WriteLine(products[j].ToString());
-            }
+
+            WriteProductsContent(products);
+
             Console.WriteLine("");
             app.UpdateQuality();
+        }
+    }
+
+    private static void WriteProductsContent(IList<Product> products)
+    {
+        foreach (var product in products)
+        {
+            Console.WriteLine(product.ToString());
         }
     }
 
